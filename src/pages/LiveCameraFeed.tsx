@@ -41,7 +41,7 @@ export default function LiveCameraFeed() {
         throw new Error(data.message || "Unexpected API response");
       }
 
-      const urls = data.snapshots.map((name: string) => `${import.meta.env.VITE_API_URL}/uploads/${name}`;
+      const urls = data.snapshots.map((name: string) => `${import.meta.env.VITE_API_URL}/uploads/${name}`);
       setSnapshots(urls);
       setCurrentFrame(0);
     } catch (err) {
