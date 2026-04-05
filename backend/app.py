@@ -9,6 +9,10 @@ import cv2
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/")
+def home():
+    return {"status": "ok", "message": "Smartflow backend is running"}
+
 @app.route("/api")
 def api():
     return "API working"
