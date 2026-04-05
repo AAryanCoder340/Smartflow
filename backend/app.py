@@ -9,6 +9,10 @@ import cv2
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/api")
+def api():
+    return "API working"
+
 UPLOAD_FOLDER = os.path.join(app.root_path, "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
