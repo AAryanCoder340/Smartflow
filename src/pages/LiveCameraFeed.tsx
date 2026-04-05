@@ -28,7 +28,7 @@ export default function LiveCameraFeed() {
       const formData = new FormData();
       formData.append("video", file);
 
-      const response = await fetch("http://localhost:5000/upload", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/upload`, {
         method: "POST",
         body: formData,
       });
@@ -41,7 +41,7 @@ export default function LiveCameraFeed() {
         throw new Error(data.message || "Unexpected API response");
       }
 
-      const urls = data.snapshots.map((name: string) => `http://localhost:5000/uploads/${name}`);
+      const urls = data.snapshots.map((name: string) => `${import.meta.env.VITE_API_URL}/uploads/${name}`;
       setSnapshots(urls);
       setCurrentFrame(0);
     } catch (err) {
