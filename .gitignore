@@ -22,3 +22,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+#  Backend cleanup
+backend/uploads/
+backend/__pycache__/
+*.pyc
+
+#  Large ML model
+backend/yolov8n.pt
+
+#  Environment variables
+.env
+
+# (already present but keep safe)
+node_modules/
